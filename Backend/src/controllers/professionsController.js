@@ -9,9 +9,9 @@ const professionsController = {
       res.status(200).json({
         meta: {
           error: false,
-          count: data.length,
           status: 200,
           url: url,
+          count: data.length,
         },
         data: data,
       });

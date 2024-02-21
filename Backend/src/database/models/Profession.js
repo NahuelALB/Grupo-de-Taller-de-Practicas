@@ -18,12 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
 
-  /*   Profession.associate = (models) => {
+  Profession.associate = (models) => {
     Profession.hasMany(models.Applicant, {
       as: 'Applicant',
       foreignKey: 'professionId',
     });
-  }; */
+  };
 
   return Profession;
 };

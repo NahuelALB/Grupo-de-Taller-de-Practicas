@@ -9,7 +9,36 @@ const applicantsController = {
       res.status(200).json({
         meta: {
           error: false,
+          status: 200,
+          url: url,
           count: data.length,
+        },
+        data: data,
+      });
+    } catch (error) {
+      console.error('Te arrojó un error -> ', error);
+      res.status(500).json({
+        meta: {
+          error: true,
+          status: 500,
+          mesagge: 'Internal Server Error :(',
+        },
+      });
+    }
+  },
+  detail: async (req, res) => {
+    try {
+      const params = req.params.id;
+      const url = req.protocol + '://' + req.get('host') + req.originalUrl;
+      const data = await db.Applicant.findByPk(params, {
+        include: {
+          model: db.Profession,
+          as: 'profession',
+        },
+      });
+      res.status(200).json({
+        meta: {
+          error: false,
           status: 200,
           url: url,
         },
@@ -25,10 +54,6 @@ const applicantsController = {
         },
       });
     }
-  },
-  detail: (req, res) => {
-    let params = req.params.id;
-    res.send(`Soy el detalle ${params}`);
   },
 };
 

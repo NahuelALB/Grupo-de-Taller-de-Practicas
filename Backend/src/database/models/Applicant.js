@@ -17,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    areaCode: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     phone: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -34,12 +38,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  /*   Applicant.associate = (models) => {
+  Applicant.associate = (models) => {
     Applicant.belongsTo(models.Profession, {
       as: 'profession',
       foreignKey: 'professionId',
     });
-  }; */
+  };
 
   return Applicant;
 };
