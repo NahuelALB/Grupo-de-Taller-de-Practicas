@@ -1,9 +1,25 @@
-const db = require('../database/models');
+const { Profession, Applicant } = require('../database/models');
 
 const applicantsController = {
   list: async (req, res) => {
     try {
-      const data = await db.Applicant.findAll();
+      const data = await Applicant.findAll({
+        attributes: [
+          'id',
+          'name',
+          'lastName',
+          'email',
+          'areaCode',
+          'phone',
+          'linkedIn',
+          'genre',
+          'image',
+        ],
+        include: {
+          model: Profession,
+          as: 'profession',
+        },
+      });
       const url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
       res.status(200).json({
@@ -30,9 +46,20 @@ const applicantsController = {
     try {
       const params = req.params.id;
       const url = req.protocol + '://' + req.get('host') + req.originalUrl;
-      const data = await db.Applicant.findByPk(params, {
+      const data = await Applicant.findByPk(params, {
+        attributes: [
+          'id',
+          'name',
+          'lastName',
+          'email',
+          'areaCode',
+          'phone',
+          'linkedIn',
+          'genre',
+          'image',
+        ],
         include: {
-          model: db.Profession,
+          model: Profession,
           as: 'profession',
         },
       });

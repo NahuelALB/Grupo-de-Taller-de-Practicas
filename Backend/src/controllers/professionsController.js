@@ -1,9 +1,9 @@
-const db = require('../database/models/');
+const { Profession } = require('../database/models/');
 
 const professionsController = {
   list: async (req, res) => {
     try {
-      const data = await db.Profession.findAll();
+      const data = await Profession.findAll();
       const url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
       res.status(200).json({
