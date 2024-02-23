@@ -10,7 +10,7 @@ Dirígete a la carpeta Backend desde la terminal o línea de comandos.
 
 ---
 
-## `cd Backend`.
+ `cd Backend`.
 
 ---
 
@@ -18,7 +18,7 @@ Ejecuta el comando:
 
 ---
 
-## `npm install`
+ `npm install`
 
 ---
 
@@ -26,7 +26,7 @@ Luego, navega a la carpeta Frontend:
 
 ---
 
-## `cd ../Frontend`
+ `cd ../Frontend`
 
 ---
 
@@ -34,7 +34,7 @@ De nuevo, ejecuta:
 
 ---
 
-## `npm install`
+ `npm install`
 
 ---
 
