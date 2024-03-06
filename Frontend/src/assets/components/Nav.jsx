@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
@@ -8,27 +9,31 @@ function Nav() {
           <h3>Opciones</h3>
           <ul>
             <li>
-              <a href="#">
+              <Link to="#">
                 <i
                   className="bi bi-building"
                   style={{ fontSize: '1.2rem', color: 'cornflowerblue' }}
                 ></i>
                 - Empresas
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/applicants">
                 <i
                   className="bi bi-person"
                   style={{ fontSize: '1.2rem', color: 'cornflowerblue' }}
                 ></i>
                 - Aspirantes
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
-                <i className="bi bi-list-check"></i>- Profesiones
-              </a>
+              <Link to="/professions">
+                <i
+                  className="bi bi-list-check"
+                  style={{ fontSize: '1.2rem', color: 'cornflowerblue' }}
+                ></i>
+                - Profesiones
+              </Link>
             </li>
             <li>
               <a href="#">
@@ -41,7 +46,11 @@ function Nav() {
             </li>
             <li>
               <a href="#">
-                <i className="bi bi-chat-left-text"></i>- Contacto
+                <i
+                  className="bi bi-chat-left-text"
+                  style={{ fontSize: '1.2rem', color: 'cornflowerblue' }}
+                ></i>
+                - Contacto
               </a>
             </li>
           </ul>

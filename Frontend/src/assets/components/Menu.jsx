@@ -1,5 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+//Importar Componentes
 import Nav from '../components/Nav';
+//Importar Imagenes
+import logo from '../img/logo-dh.png';
 
 function Menu() {
   return (
@@ -7,9 +11,11 @@ function Menu() {
       <header className="menu-wrap">
         <figure className="user">
           <div className="user-avatar">
-            <img src="../img/logo-dh.png" alt="Logo" />
+            <img src={logo} alt="Logo" />
           </div>
-          <figcaption>Digital House</figcaption>
+          <Link to="/">
+            <figcaption>Digital House</figcaption>
+          </Link>
         </figure>
         {/* {Nav Component} */}
         <Nav />

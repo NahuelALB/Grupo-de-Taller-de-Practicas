@@ -1,4 +1,6 @@
 import React from 'react';
+//Importar imagenes
+import banner from '../img/banner.jpg';
 
 function Prevent() {
   return (
@@ -10,7 +12,7 @@ function Prevent() {
           administrativos, profesionales y técnicos.
         </p>
         <div>
-          <img src="../img/banner.jpg" alt="Rcursos Humanos" />
+          <img src={banner} alt="Recursos Humanos" />
         </div>
       </header>
     </>

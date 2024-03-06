@@ -5,7 +5,7 @@ function Access() {
     <>
       <section className="search-wrap">
         <div className="search">
-          <label for="search">
+          <label htmlFor="search">
             <i
               className="bi bi-search"
               style={{ fontSize: '1.5rem', color: 'cornflowerblue' }}

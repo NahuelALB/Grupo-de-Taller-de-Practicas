@@ -11,11 +11,13 @@ import './assets/css/font-awesome.min.css';
 
 function App() {
   return (
-    <div className="dashboard">
-      <Access />
-      <Menu />
-      <Content />
-    </div>
+    <>
+      <div className="dashboard">
+        <Access />
+        <Menu />
+        <Content />
+      </div>
+    </>
   );
 }
 
