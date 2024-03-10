@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { useFetch } from '../useFetch';
+// import { fetchData } from '../fetchingData';
+
+// const apiData = fetchData('http://localhost:3030/professions');
 
 function Profession() {
+  /*   const data = apiData.read();
+  console.log(data); */
+  const { data, loading, error } = useFetch(
+    'http://localhost:3030/professions',
+  );
+  console.log(data);
   return (
     <>
       <section className="content profesiones">
@@ -12,54 +22,24 @@ function Profession() {
           >
             Listado de Profesiones
           </h4>
-          <button
+          {/*           <button
             type="button"
             className="list-group-item list-group-item-action text-center"
           >
             Abogado
-          </button>
-          <button
-            type="button"
-            className="list-group-item list-group-item-action text-center"
-          >
-            Arquitecto
-          </button>
-          <button
-            type="button"
-            className="list-group-item list-group-item-action text-center"
-          >
-            Botánico
-          </button>
-          <button
-            type="button"
-            className="list-group-item list-group-item-action text-center"
-          >
-            Computista
-          </button>
-          <button
-            type="button"
-            className="list-group-item list-group-item-action text-center"
-          >
-            Economista
-          </button>
-          <button
-            type="button"
-            className="list-group-item list-group-item-action text-center"
-          >
-            Técnico de sonido
-          </button>
-          <button
-            type="button"
-            className="list-group-item list-group-item-action text-center"
-          >
-            Profesor
-          </button>
-          <button
-            type="button"
-            className="list-group-item list-group-item-action text-center"
-          >
-            Linguista
-          </button>
+          </button> */}
+          {error && <h4>Error: {error}</h4>}
+          {loading && <h4>Loading...</h4>}
+          {data &&
+            data.map((item, index) => (
+              <button
+                key={index}
+                type="button"
+                className="list-group-item list-group-item-action text-center"
+              >
+                {item.name}
+              </button>
+            ))}
         </div>
       </section>
     </>

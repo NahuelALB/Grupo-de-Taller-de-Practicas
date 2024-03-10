@@ -1,19 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 
-function CardApplicant() {
-  /*   const reference = useRef();
-  console.log(reference.current);
-  reference.current.innerHTML += 'Nuevo valor'; */
-
+function CardApplicant({ item }) {
   return (
     <>
       <div className="person-box shadow p-3 mb-5 bg-body-tertiary rounded">
         <div className="box-avatar">
-          <img src="./assets/img/foto1.jpg" alt="Gloria" />
+          <img src={item.image} alt="Profile" />
+          {/* ---Colocar la Imagen del Servidor--- */}
         </div>
         <div className="box-bio">
-          <h2 className="bio-name">Gloria Medina</h2>
-          <p className="bio-position">Administrador</p>
+          <h2 className="bio-name">{`${item.name} ${item.lastName}`}</h2>
+          <p className="bio-position">{item.profession.name}</p>
         </div>
         <div className="box-actions">
           <button>
