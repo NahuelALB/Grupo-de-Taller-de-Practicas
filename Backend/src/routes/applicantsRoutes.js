@@ -7,5 +7,6 @@ router.get('/:id', applicantsController.detail);
 
 router.post('/', applicantsController.create);
 router.patch('/update/:id', applicantsController.update);
+router.delete('/destroy/:id', applicantsController.destroy);
 
 module.exports = router;

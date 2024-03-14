@@ -178,6 +178,30 @@ const applicantsController = {
       });
     }
   },
+  destroy: async (req, res) => {
+    try {
+      const id = req.params.id;
+
+      Applicant.destroy({ where: { id: id } });
+
+      res.status(200).json({
+        meta: {
+          error: false,
+          status: 200,
+          success: 'The request was made successfully!! :)',
+        },
+      });
+    } catch (error) {
+      console.error('Hubo un error: ', error);
+      res.status(500).json({
+        meta: {
+          error: true,
+          status: 500,
+          message: 'Internal Server Error :(',
+        },
+      });
+    }
+  },
 };
 
 module.exports = applicantsController;
