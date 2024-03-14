@@ -40,7 +40,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       image: {
         type: DataTypes.STRING,
-        defaultValue: 'default.png',
+        defaultValue:
+          'http://localhost:3030/files/applicantsImages/defaultProfile.jpg',
       },
     },
     {

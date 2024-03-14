@@ -82,6 +82,102 @@ const applicantsController = {
       });
     }
   },
+  create: async (req, res) => {
+    try {
+      const {
+        name,
+        lastName,
+        email,
+        password,
+        areaCode,
+        phone,
+        linkedIn,
+        genre,
+        profession,
+      } = req.body;
+
+      Applicant.create({
+        name: name,
+        lastname: lastName,
+        email: email,
+        password: password,
+        areaCode: areaCode,
+        phone: phone,
+        linkedIn: linkedIn,
+        genre: genre,
+        professionId: profession,
+      });
+      res.status(201).json({
+        meta: {
+          error: false,
+          status: 201,
+        },
+        data: req.body,
+      });
+    } catch (error) {
+      console.error('Hubo un error ', error);
+      res.status(500).json({
+        meta: {
+          error: true,
+          status: 500,
+          mesagge: 'Internal Server Error :(',
+        },
+      });
+    }
+  },
+  update: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const {
+        name,
+        lastName,
+        email,
+        password,
+        areaCode,
+        phone,
+        linkedIn,
+        genre,
+        image,
+        profession,
+      } = req.body;
+
+      Applicant.update(
+        {
+          name: name,
+          lastname: lastName,
+          email: email,
+          password: password,
+          areaCode: areaCode,
+          phone: phone,
+          linkedIn: linkedIn,
+          genre: genre,
+          image: image,
+          professionId: profession,
+        },
+        {
+          where: {
+            id: id,
+          },
+        },
+      );
+      res.status(200).json({
+        meta: {
+          error: false,
+          status: 200,
+        },
+        data: req.body,
+      });
+    } catch (error) {
+      console.error('Te arrojó un error -> ', error);
+      res.status(500).json({
+        meta: {
+          error: true,
+          status: 500,
+          mesagge: 'Internal Server Error :(',
+        },
+      });
+    }
+  },
 };
 
 module.exports = applicantsController;

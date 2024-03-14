@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CardApplicant({ item }) {
   return (
@@ -12,8 +13,9 @@ function CardApplicant({ item }) {
           <h2 className="bio-name">{`${item.name} ${item.lastName}`}</h2>
           <p className="bio-position">{item.profession.name}</p>
         </div>
-        <div className="box-actions">
-          <button>
+        <hr />
+        <div className="">
+          {/*           <button>
             <i className="bi bi-star"></i>
           </button>
           <button>
@@ -21,7 +23,12 @@ function CardApplicant({ item }) {
           </button>
           <button>
             <i className="bi bi-envelope"></i>
-          </button>
+          </button> */}
+          <Link to={`/applicants/${item.id}`}>
+            <button className="cardButton" type="button">
+              Ver más información
+            </button>
+          </Link>
         </div>
       </div>
     </>
