@@ -402,3 +402,17 @@ body {
   border-radius: 10px;
   margin-right: 20px;
 }
+
+/* ------Estilos de formulario de Applicants------- */
+.formApplicant {
+  display: flex;
+  width: 50vw;
+  height: 120vh;
+  padding: 1vw;
+  flex-direction: column;
+
+  font-weight: bold;
+}
+.formApplicant label {
+  margin: 1vh 0vw;
+}

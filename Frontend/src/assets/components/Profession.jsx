@@ -1,12 +1,7 @@
 import React, { Suspense } from 'react';
 import { useFetch } from '../useFetch';
-// import { fetchData } from '../fetchingData';
-
-// const apiData = fetchData('http://localhost:3030/professions');
 
 function Profession() {
-  /*   const data = apiData.read();
-  console.log(data); */
   const { data, loading, error } = useFetch(
     'http://localhost:3030/professions',
   );

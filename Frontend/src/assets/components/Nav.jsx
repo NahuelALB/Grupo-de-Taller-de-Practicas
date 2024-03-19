@@ -36,13 +36,13 @@ function Nav() {
               </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/applicants/create">
                 <i
                   className="bi bi-person-vcard"
                   style={{ fontSize: '1.2rem', color: 'cornflowerblue' }}
                 ></i>
                 - Postulate aquí
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#">

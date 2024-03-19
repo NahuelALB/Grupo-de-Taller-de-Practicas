@@ -5,6 +5,7 @@ import Prevent from '../components/Prevent';
 import Applicant from '../components/Applicant';
 import Profession from '../components/Profession';
 import ApplicantDetail from './ApplicantDetail';
+import FormApplicant from './FormApplicant';
 
 function Content() {
   return (
@@ -14,6 +15,7 @@ function Content() {
         <Route path="/applicants" Component={Applicant} />
         <Route path="/professions" Component={Profession} />
         <Route path="/applicants/:detailId" Component={ApplicantDetail} />
+        <Route path="/applicants/create" Component={FormApplicant} />
       </Routes>
     </main>
   );
